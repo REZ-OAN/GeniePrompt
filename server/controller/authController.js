@@ -2,7 +2,7 @@ import userModel from "../models/userModel.js";
 import errorResponse from "../utils/errorResponse.js";
 import bcrypt from "bcrypt";
 import JWT from "jsonwebtoken";
-import cookie from "cookie";
+
 // JWT token
 export const sendToken = (user, statusCode, res) => {
     const { _id: idx } = user;
