@@ -32,7 +32,7 @@ const Text = ({ generated, text, link }) => {
         if (generated) {
             fetcher();
         }
-    }, [generated, text, link]);
+    }, []);
     return (
         <>
             <Collapse in={error ? true : false}>
