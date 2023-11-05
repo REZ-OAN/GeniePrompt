@@ -54,7 +54,7 @@ export const promptController = async (req, res) => {
             return res
                 .status(200)
                 .json(
-                    `Include The Generated Prompt to your wants\n${result[0]["generated_text"]}`
+                    `Include The Generated Prompt to your wants \n "${result[0]["generated_text"]}"`
                 );
         }
     } catch (err) {
