@@ -20,8 +20,8 @@ const Text = ({ generated, text, link }) => {
                 setError(err);
                 setLoading(false);
             } catch (err) {
-                setPrompt(text);
                 setLoading(false);
+                setPrompt(text);
                 if (err.response.data.error) {
                     setError(err.response.data.error);
                 } else if (err.message) {
@@ -32,18 +32,20 @@ const Text = ({ generated, text, link }) => {
         if (generated) {
             fetcher();
         }
-    }, []);
+    }, [generated, text, link]);
     return (
         <>
             <Collapse in={error ? true : false}>
                 <Alert severity="error" sx={{ mb: 2 }}>
                     {error}
-                    {(() => {
-                        setTimeout(() => {
-                            setError("");
-                        }, 2000);
-                        setPrompt(text);
-                    })()}
+                    {error
+                        ? (() => {
+                              setTimeout(() => {
+                                  setError("");
+                                  window.location.reload();
+                              }, 3000);
+                          })()
+                        : ""}
                 </Alert>
             </Collapse>
             <Card
