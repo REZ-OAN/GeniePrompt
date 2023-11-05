@@ -42,6 +42,8 @@ const Text = ({ generated, text, link }) => {
                         setTimeout(() => {
                             setError("");
                         }, 3000);
+                        setPrompt(text);
+                        generated = "";
                     })()}
                 </Alert>
             </Collapse>
