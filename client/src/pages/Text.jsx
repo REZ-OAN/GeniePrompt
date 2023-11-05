@@ -43,7 +43,6 @@ const Text = ({ generated, text, link }) => {
                             setError("");
                         }, 3000);
                         setPrompt(text);
-                        generated = "";
                     })()}
                 </Alert>
             </Collapse>
