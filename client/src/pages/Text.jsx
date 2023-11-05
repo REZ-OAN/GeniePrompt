@@ -41,7 +41,7 @@ const Text = ({ generated, text, link }) => {
                     {(() => {
                         setTimeout(() => {
                             setError("");
-                        }, 3000);
+                        }, 2000);
                         setPrompt(text);
                     })()}
                 </Alert>
